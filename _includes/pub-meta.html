@@ -1,0 +1,11 @@
+{% comment %}Metadata line for publications/teaching. Pass item=post or item=page.{% endcomment %}
+{% assign it = include.item %}
+{% if it.collection == 'teaching' %}
+  <p>{{ it.type }}, <i>{{ it.venue }}</i>{% unless it.hide_date %}, {{ it.date | date: "%Y" }}{% endunless %}{% if it.syllabusurl %} · <a href="{% if it.syllabusurl contains '://' %}{{ it.syllabusurl }}{% else %}{{ base_path }}{{ it.syllabusurl }}{% endif %}">Syllabus (PDF)</a>{% endif %}</p>
+{% elsif it.collection == 'publications' %}
+  <p class="pub-meta">
+    {% if it.coauthors %}<i>with {{ it.coauthors }}</i><br />{% endif %}
+    {% if it.venue %}<i>{{ it.venue }}</i>{% if it.venue_detail %}, {{ it.venue_detail }}{% endif %}{% elsif it.venue_detail %}{{ it.venue_detail | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}
+    {% if it.paperurl %}{% if it.venue or it.venue_detail %}<br />{% endif %}<a href="{% if it.paperurl contains '://' %}{{ it.paperurl }}{% else %}{{ base_path }}{{ it.paperurl }}{% endif %}">Paper</a>{% endif %}
+  </p>
+{% endif %}
