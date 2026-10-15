@@ -1,11 +1,20 @@
 /* ==========================================================================
-   SITE ADJUSTMENTS: edit the number below, commit, and the site rebuilds
+   SITE ADJUSTMENTS: edit the values below, commit, and the site rebuilds
    in about 2 minutes.
    ========================================================================== */
 
 // Extra space between the left sidebar and the main page (wide screens only).
 // 0 = theme default. Try 2em to 4em.
-$sidebar-gap: 3em;
+$sidebar-gap: 2em;
+
+// How heavy headings look. 400 = normal, 500 = medium, 600 = semi-bold,
+// 700 = bold (theme default).
+$heading-weight: 400;     // page titles ("Research") and section headings ("Academic Research")
+$item-title-weight: 500;  // each paper / course title in a list
+
+// Heading typeface. $sans-serif = theme default.
+// For a serif look try:  Georgia, "Times New Roman", serif
+$heading-font: $sans-serif;
 
 /* ========================================================================== */
 
@@ -14,4 +23,22 @@ $sidebar-gap: 3em;
   .archive {
     padding-left: $sidebar-gap;
   }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  font-weight: $heading-weight;
+}
+
+.archive__item-title {
+  font-family: $heading-font;
+  font-weight: $item-title-weight;
+}
+
+// Let long sidebar lines (address, institution) wrap instead of running off
+// the edge. Wrapped lines are indented to sit under the text, not the icon.
+.author__urls li {
+  white-space: normal;
+  padding-left: 1.6em;
+  text-indent: -1.6em;
 }
