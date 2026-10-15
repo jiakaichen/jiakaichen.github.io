@@ -8,6 +8,7 @@
    sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
  */
 
+// "custom" (last below) = your adjustments in _sass/_custom.scss
 @import
     "vendor/breakpoint/breakpoint",
 
@@ -34,5 +35,7 @@
 
     "layout/page",
     "layout/archive",
-    "layout/sidebar"
+    "layout/sidebar",
+
+    "custom"
 ;

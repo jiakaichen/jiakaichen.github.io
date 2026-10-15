@@ -1,0 +1,17 @@
+/* ==========================================================================
+   SITE ADJUSTMENTS: edit the number below, commit, and the site rebuilds
+   in about 2 minutes.
+   ========================================================================== */
+
+// Extra space between the left sidebar and the main page (wide screens only).
+// 0 = theme default. Try 2em to 4em.
+$sidebar-gap: 3em;
+
+/* ========================================================================== */
+
+@include breakpoint($large) {
+  .page,
+  .archive {
+    padding-left: $sidebar-gap;
+  }
+}
