@@ -16,6 +16,11 @@ $item-title-weight: 500;  // each paper / course title in a list
 // For a serif look try:  Georgia, "Times New Roman", serif
 $heading-font: $sans-serif;
 
+// Text sizes on the Research page, relative to normal body text (1em).
+// Theme default: 1.25em for paper titles, 1em for the lines below them.
+$paper-title-size: 1em;     // each paper title
+$paper-text-size: 0.85em;   // co-authors/status, journal and year, "Download Paper"
+
 /* ========================================================================== */
 
 @include breakpoint($large) {
@@ -33,6 +38,16 @@ h1, h2, h3, h4, h5, h6 {
 .archive__item-title {
   font-family: $heading-font;
   font-weight: $item-title-weight;
+}
+
+.archive__item--paper {
+  .archive__item-title {
+    font-size: $paper-title-size;
+  }
+
+  p {
+    font-size: $paper-text-size;
+  }
 }
 
 // Let long sidebar lines (address, institution) wrap instead of running off

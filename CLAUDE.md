@@ -30,12 +30,15 @@ Converted from a hand-written single-page HTML site.
 
 ## Customizations to the stock theme (keep these when updating the theme)
 - `_sass/_custom.scss` (imported last in `assets/css/main.scss` as `"custom"`): sidebar gap,
-  heading weights/font, wrapping of long sidebar lines (icons exempt from the indent).
+  heading weights/font, Research-page text sizes (`$paper-title-size`, `$paper-text-size`,
+  applied via the `archive__item--paper` class set in `archive-single.html`), wrapping of long sidebar lines (icons exempt from the indent).
 - `_sass/layout/_sidebar.scss`: avatar `border-radius: 0` (rectangular photo, not a circle).
 - `_includes/archive-single.html`: no "Published in"/"Published:" labels for publications;
   `hide_date` respected for teaching; titles unlinked when a paper has no body text;
-  citation line suppressed for publications.
+  citation line suppressed for publications; publication venue shown after the excerpt.
 - `_layouts/single.html`: same "Published" removal on individual paper pages.
+- `_layouts/archive.html`: `hide_title: true` in a page's front matter hides its
+  big heading (set on the Research and Teaching pages; the title is still used in the browser tab).
 
 ## Preferences
 - Keep the theme's default look unless asked; make style changes in `_sass/_custom.scss`.
