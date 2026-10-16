@@ -25,16 +25,19 @@ Converted from a hand-written single-page HTML site.
     used only for ordering and must never be displayed.
   - Text below the front matter (e.g. an abstract) makes the title link to the paper's own
     page; with no body text, the title is plain text and `sitemap: false` is set.
-- `_teaching/*.md`: one file per course, syllabus link in the body.
+- `_teaching/*.md`: one file per course, no body text. `category:` picks a Teaching page
+  section from `teaching_category` in `_config.yml`; `type:` is the line under the title;
+  `syllabusurl:` gives the "Download Syllabus" link. Courses have no pages of their own
+  (`output: false` for the teaching collection).
 - `files/`: PDFs (CV, papers, syllabi). `images/JiakaiChenUH2017small.jpg`: sidebar photo.
 
 ## Customizations to the stock theme (keep these when updating the theme)
 - `_sass/_custom.scss` (imported last in `assets/css/main.scss` as `"custom"`): sidebar gap,
-  heading weights/font, Research-page text sizes (`$paper-title-size`, `$paper-text-size`,
-  applied via the `archive__item--paper` class set in `archive-single.html`), wrapping of long sidebar lines (icons exempt from the indent).
+  heading weights/font, Research/Teaching list text sizes (`$item-title-size`, `$item-text-size`,
+  applied via the `archive__item--compact` class set in `archive-single.html`), wrapping of long sidebar lines (icons exempt from the indent).
 - `_sass/layout/_sidebar.scss`: avatar `border-radius: 0` (rectangular photo, not a circle).
 - `_includes/archive-single.html`: no "Published in"/"Published:" labels for publications;
-  `hide_date` respected for teaching; titles unlinked when a paper has no body text;
+  `hide_date` respected for teaching; course titles never linked, no course excerpt; titles unlinked when a paper has no body text;
   citation line suppressed for publications; publication venue shown after the excerpt.
 - `_layouts/single.html`: same "Published" removal on individual paper pages.
 - `_layouts/archive.html`: `hide_title: true` in a page's front matter hides its

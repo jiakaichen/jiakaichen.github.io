@@ -93,6 +93,11 @@ publication_category:
   wip:
     title: 'Work in Progress'
 
+# Teaching page sections, in display order. Each course's `category:` picks one.
+teaching_category:
+  shidler:
+    title: 'Shidler College of Business, UH Manoa'
+
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/ for social media previews
 breadcrumbs              : false # true, false (default)
@@ -225,7 +230,7 @@ kramdown:
 # These settings control the types of collections used by the template
 collections:
   teaching:
-    output: true
+    output: false   # courses have no pages of their own; they are listed on /teaching/
     permalink: /:collection/:path/
   publications:
     output: true

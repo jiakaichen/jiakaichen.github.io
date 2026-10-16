@@ -13,7 +13,7 @@
 {% endif %}
 
 <div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item{% if post.collection == 'publications' %} archive__item--paper{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item{% if post.collection == 'publications' or post.collection == 'teaching' %} archive__item--compact{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
         <img src=
@@ -26,8 +26,9 @@
       </div>
     {% endif %}
 
-    {% comment %} Papers with nothing below their front matter get no page link. {% endcomment %}
+    {% comment %} Papers with nothing below their front matter, and courses (no pages), get no page link. {% endcomment %}
     {% assign item_has_page = true %}
+    {% if post.collection == 'teaching' %}{% assign item_has_page = false %}{% endif %}
     {% if post.collection == 'publications' %}
       {% assign item_body = post.content | strip_html | strip %}
       {% if item_body == "" %}{% assign item_has_page = false %}{% endif %}
@@ -48,14 +49,17 @@
     {% endif %}
 
         {% if post.collection == 'teaching' %}
-          <p> {{ post.type }}, <i>{{ post.venue }}</i>{% unless post.hide_date %}, {{ post.date | default: "1900-01-01" | date: "%Y" }}{% endunless %} </p>
+          <p>{{ post.type }}{% if post.venue %}, <i>{{ post.venue }}</i>{% endif %}{% unless post.hide_date %}, {{ post.date | default: "1900-01-01" | date: "%Y" }}{% endunless %}</p>
+          {% if post.syllabusurl %}<p><a href="{{ post.syllabusurl }}">Download Syllabus</a></p>{% endif %}
         {% elsif post.collection == 'publications' %}
           {% comment %} Publication venue is shown after the excerpt, below. {% endcomment %}
         {% elsif post.date %}
          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
         {% endif %}
 
-    {% if post.excerpt and site.read_more != 'enabled' %}
+    {% if post.collection == 'teaching' %}
+    {% comment %} Courses have no body text, so no excerpt. {% endcomment %}
+    {% elsif post.excerpt and site.read_more != 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
     {% elsif post.excerpt and site.read_more == 'enabled' %}
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
