@@ -3,6 +3,7 @@ title: 'Did Dealers Fail to Make Markets during the Pandemic?'
 collection: publications
 category: policy
 permalink: /publication/dealers-pandemic
+excerpt: 'With Haoyang Liu (Dallas Fed), David Rubio (New York Fed), Asani Sarkar (New York Fed), and Zhaogang Song (Johns Hopkins Univ.).'
 date: 2021-03-01
 venue: 'Liberty Street Economics'
 paperurl: 'https://libertystreeteconomics.newyorkfed.org/2021/03/did-dealers-fail-to-make-markets-during-the-pandemic.html'
