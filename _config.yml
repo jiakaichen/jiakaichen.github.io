@@ -93,6 +93,18 @@ publication_category:
   wip:
     title: 'Work in Progress'
 
+# Research page filter tags, in display order. Each paper's `topics:` lists keys from here;
+# the key is also the link to a filtered view, e.g. /publications/#fintech.
+research_topics:
+  intermediation:
+    title: 'Financial Intermediation and Markets'
+  realestate:
+    title: 'Real Estate Finance'
+  fintech:
+    title: 'Financial Technology'
+  information:
+    title: 'Information Economics and Market Mechanisms'
+
 # Teaching page sections, in display order. Each course's `category:` picks one.
 teaching_category:
   shidler:

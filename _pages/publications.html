@@ -12,6 +12,16 @@ hide_title: true
 
 {% include base_path %}
 
+{% comment %} Topic filter. Hidden until the script below runs, so it never shows without JavaScript. {% endcomment %}
+{% if site.research_topics %}
+  <div class="topic-filter" hidden>
+    <a class="topic-tag is-active" href="{{ base_path }}/publications/" data-topic="">All</a>
+    {% for topic in site.research_topics %}
+      <a class="topic-tag" href="{{ base_path }}/publications/#{{ topic[0] }}" data-topic="{{ topic[0] }}">{{ topic[1].title }}</a>
+    {% endfor %}
+  </div>
+{% endif %}
+
 <!-- New style rendering if publication categories are defined -->
 {% if site.publication_category %}
   {% for category in site.publication_category  %}
@@ -21,11 +31,13 @@ hide_title: true
         {% continue %}
       {% endif %}
       {% unless title_shown %}
+        <section class="pub-section">
         <h2>{{ category[1].title }}</h2><hr />
         {% assign title_shown = true %}
       {% endunless %}
       {% include archive-single.html %}
     {% endfor %}
+    {% if title_shown %}</section>{% endif %}
   {% endfor %}
 {% else %}
   {% for post in site.publications reversed %}
@@ -33,5 +45,43 @@ hide_title: true
   {% endfor %}
 {% endif %}
 
+<script>
+  // Show only papers tagged with the topic in the URL hash (e.g. #fintech);
+  // sections left with no papers are hidden too. No hash shows everything.
+  (function () {
+    var filter = document.querySelector('.topic-filter');
+    if (!filter) return;
+    filter.hidden = false;
 
+    function apply() {
+      var topic = decodeURIComponent(location.hash.slice(1));
+      if (topic && !filter.querySelector('[data-topic="' + topic + '"]')) topic = '';
 
+      document.querySelectorAll('.topic-filter .topic-tag').forEach(function (a) {
+        a.classList.toggle('is-active', a.getAttribute('data-topic') === topic);
+      });
+      document.querySelectorAll('.pub-section').forEach(function (section) {
+        var shown = 0;
+        section.querySelectorAll('.list__item').forEach(function (item) {
+          var topics = (item.getAttribute('data-topics') || '').split(' ');
+          var match = !topic || topics.indexOf(topic) !== -1;
+          item.hidden = !match;
+          if (match) shown++;
+        });
+        section.hidden = shown === 0;
+      });
+    }
+
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('.topic-tag');
+      if (!a) return;
+      e.preventDefault();
+      var topic = a.getAttribute('data-topic');
+      history.replaceState(null, '', topic ? '#' + topic : location.pathname);
+      apply();
+      filter.scrollIntoView({ block: 'nearest' });
+    });
+    window.addEventListener('hashchange', apply);
+    apply();
+  })();
+</script>

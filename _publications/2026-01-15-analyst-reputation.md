@@ -2,6 +2,7 @@
 title: 'Does Analyst Reputation Matter For Firm Value? Evidence from Corporate Fraud Revelation'
 collection: publications
 category: working
+topics: [information]
 permalink: /publication/analyst-reputation
 excerpt: 'With Joonho Kim (Univ. of Hawaii at Manoa) and Boochun Jung (Univ. of Hawaii at Manoa).'
 date: 2026-01-15

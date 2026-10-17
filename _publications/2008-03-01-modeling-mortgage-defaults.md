@@ -2,6 +2,7 @@
 title: 'Modeling of Mortgage Defaults'
 collection: publications
 category: journal
+topics: [realestate]
 permalink: /publication/modeling-mortgage-defaults
 excerpt: 'With Lakhbir S. Hayre, Manish Saraf, and Robert Young.'
 date: 2008-03-01

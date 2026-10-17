@@ -62,3 +62,48 @@ h1, h2, h3, h4, h5, h6 {
     text-indent: 0;
   }
 }
+
+// Research page topic tags: the filter row at the top and the tags under each paper.
+.topic-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-bottom: 1em;
+  font-size: $item-text-size;
+}
+
+.paper-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+
+.archive .topic-tag {
+  display: inline-block;
+  padding: 0.15em 0.7em;
+  border: 1px solid var(--global-border-color);
+  border-radius: 1em;
+  color: var(--global-text-color-light);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--global-link-color-hover);
+    border-color: currentColor;
+    text-decoration: none;
+  }
+
+  &.is-active {
+    color: var(--global-bg-color);
+    background-color: var(--global-link-color);
+    border-color: var(--global-link-color);
+  }
+}
+
+.paper-topics .topic-tag {
+  font-size: 0.85em;
+}
+
+// The theme sets `display` on some of these elements, which would override `hidden`.
+.archive [hidden] {
+  display: none !important;
+}

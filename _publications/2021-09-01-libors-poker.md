@@ -2,6 +2,7 @@
 title: 'LIBOR’s Poker'
 collection: publications
 category: journal
+topics: [intermediation, information]
 permalink: /publication/libors-poker
 date: 2021-09-01
 venue: 'Journal of Financial Markets'

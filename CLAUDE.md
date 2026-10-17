@@ -21,6 +21,10 @@ Converted from a hand-written single-page HTML site.
   - `excerpt:` = text under the title in the list (co-authors, status).
   - `venue:` = journal, shown as "*Journal*, year". Working papers have no venue.
   - `paperurl:` = "Download Paper" link. `citation:` is kept but NOT shown in the list.
+  - `topics:` = list of filter tags, keys from `research_topics` in `_config.yml` (e.g.
+    `[intermediation, fintech]`). The Research page has a tag filter at the top (script at
+    the bottom of `_pages/publications.html`); `#<key>` in the URL links to a filtered view.
+    Not `tags:`: the theme would link those to a nonexistent /tags/ page.
   - `hide_date: true` on working/wip papers and courses: their dates are placeholders
     used only for ordering and must never be displayed.
   - Text below the front matter (e.g. an abstract) makes the title link to the paper's own
@@ -39,6 +43,7 @@ Converted from a hand-written single-page HTML site.
 - `_includes/archive-single.html`: no "Published in"/"Published:" labels for publications;
   `hide_date` respected for teaching; course titles never linked, no course excerpt; titles unlinked when a paper has no body text;
   citation line suppressed for publications; publication venue shown after the excerpt.
+  Papers get a `data-topics` attribute and a row of topic tags for the filter.
 - `_layouts/single.html`: same "Published" removal on individual paper pages.
 - `_layouts/archive.html`: `hide_title: true` in a page's front matter hides its
   big heading (set on the Research and Teaching pages; the title is still used in the browser tab).

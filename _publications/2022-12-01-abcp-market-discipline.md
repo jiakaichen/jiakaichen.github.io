@@ -2,6 +2,7 @@
 title: 'Market Discipline and Regulatory Arbitrage: Evidence from Asset-backed Commercial Paper'
 collection: publications
 category: journal
+topics: [intermediation]
 permalink: /publication/abcp-market-discipline
 date: 2022-12-01
 venue: 'Journal of Banking and Finance'

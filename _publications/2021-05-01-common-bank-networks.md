@@ -2,6 +2,7 @@
 title: 'Do low search costs facilitate like-buys-like mergers? Evidence from common bank networks'
 collection: publications
 category: journal
+topics: [intermediation, information]
 permalink: /publication/common-bank-networks
 excerpt: 'With Joonho Kim (Univ. of Hawaii) and S. Ghon Rhee (Univ. of Hawaii).'
 date: 2021-05-01

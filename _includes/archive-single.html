@@ -12,7 +12,7 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
+<div class="{{ include.type | default: "list" }}__item"{% if post.collection == 'publications' and post.topics %} data-topics="{{ post.topics | join: ' ' }}"{% endif %}>
   <article class="archive__item{% if post.collection == 'publications' or post.collection == 'teaching' %} archive__item--compact{% endif %}" itemscope itemtype="http://schema.org/CreativeWork">
     {% if include.type == "grid" and teaser %}
       <div class="archive__item-teaser">
@@ -98,6 +98,11 @@
       <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
     {% elsif post.bibtexurl %}
       <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+    {% endif %}
+
+    {% comment %} Topic tags; on the Research page, clicking one filters the list. {% endcomment %}
+    {% if post.collection == 'publications' and post.topics %}
+      <p class="paper-topics">{% for t in post.topics %}<a class="topic-tag" href="{{ base_path }}/publications/#{{ t }}" data-topic="{{ t }}">{{ site.research_topics[t].title | default: t }}</a>{% endfor %}</p>
     {% endif %}
 
   </article>
