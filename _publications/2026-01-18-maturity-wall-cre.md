@@ -4,7 +4,7 @@ collection: publications
 category: working
 topics: [realestate]
 permalink: /publication/maturity-wall-cre
-excerpt: 'With Yifan Chen (Univ. of Hawaii at Manoa).'
+excerpt: 'With Yifan Chen (Univ. of Hawaii).'
 date: 2026-01-18
 hide_date: true
 sitemap: false
