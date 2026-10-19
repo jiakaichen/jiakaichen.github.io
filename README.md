@@ -24,3 +24,11 @@ Copy any file in `_publications/`, change `title`, `category`, `permalink`, `dat
 bundle install
 bundle exec jekyll serve -l -H localhost
 ```
+## To do
+- Reorganize publications by research areas. List tags and allow people to see papers by areas. Remove the category of "Academic Research" versus "Government Policy Analysis" as the journal name shows it. Keep the category in the CV since it is not dynamic. 
+- Add SSRN or ArXiv link for each paper
+- Add more in sidebar. SSRN, Google scholar. 
+- Fix the media. 
+- In the media section, include Jay Powell, NY Fed, Congress research, etc.
+- Add discussion slides section? Not sure it is a good idea or not. 
+- Add data section. 
