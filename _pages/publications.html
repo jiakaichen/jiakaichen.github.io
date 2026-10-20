@@ -42,8 +42,10 @@ hide_title: true
 {% endif %}
 
 <script>
-  // Show only papers tagged with the topic in the URL hash (e.g. #fintech);
-  // sections left with no papers are hidden too. No hash shows everything.
+  /* Show only papers tagged with the topic in the URL hash (e.g. #fintech);
+     sections left with no papers are hidden too. No hash shows everything.
+     Use block comments only: the production build puts the page on one line,
+     so a line comment would swallow the whole script. */
   (function () {
     var filter = document.querySelector('.topic-filter');
     if (!filter) return;
