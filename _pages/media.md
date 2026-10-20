@@ -1,3 +1,9 @@
+---
+permalink: /media/
+title: "Media"
+author_profile: true
+---
+
 *"8 of the best real estate investment trusts (REITs) to buy in 2019," [U.S. News](https://money.usnews.com/investing/real-estate-investments/slideshows/best-reits-to-buy-this-year), [Yahoo Finance](https://finance.yahoo.com/news/8-best-real-estate-investment-165633497.html), December 2018*
 
 *"Big Hawaii plans for resort developer China Oceanwide," [Hawaii Business Magazine](https://www.hawaiibusiness.com/big-plans/), September 2017*
