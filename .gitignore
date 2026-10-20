@@ -5,6 +5,9 @@ _site/
 # Ignore the directory for local files during development
 local/
 
+# Ignore the .ruby-version file that specifies the Ruby version for the project. Only used for local development and not needed for deployment.
+.ruby-version
+
 # Ignore the Gemfile that is generated
 Gemfile.lock
 
