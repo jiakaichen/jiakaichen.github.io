@@ -1,7 +1,7 @@
 ---
 title: 'MBS Market Dysfunctions in the Time of COVID-19'
 collection: publications
-category: policy
+category: journal
 topics: [intermediation, realestate]
 permalink: /publication/mbs-dysfunctions-covid
 excerpt: 'With Haoyang Liu (Dallas Fed), David Rubio (New York Fed), Asani Sarkar (New York Fed), and Zhaogang Song (Johns Hopkins Univ.).'

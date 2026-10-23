@@ -1,7 +1,7 @@
 ---
 title: 'Did Dealers Fail to Make Markets during the Pandemic?'
 collection: publications
-category: policy
+category: journal
 topics: [intermediation, realestate]
 permalink: /publication/dealers-pandemic
 excerpt: 'With Haoyang Liu (Dallas Fed), David Rubio (New York Fed), Asani Sarkar (New York Fed), and Zhaogang Song (Johns Hopkins Univ.).'
