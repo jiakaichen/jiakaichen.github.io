@@ -27,8 +27,8 @@ author:
   name             : "Jiakai Chen | 陈嘉锴"
   pronouns         : # example: "she/her"  
   bio              : "First Hawaiian Bank Distinguished Professor<br>Associate Professor of Finance"
-  location         : "2404 Maile Way, Honolulu, HI 96822"
-  employer         : "Shidler College of Business, University of Hawaiʻi at Mānoa"
+  location         : "2404 Maile Way, <br>Honolulu, HI 96822"
+  employer         : "Shidler College of Business, <br>University of Hawaiʻi at Mānoa"
   uri              : # URL
   email            : "jiakaichen@hawaii.edu"
 
